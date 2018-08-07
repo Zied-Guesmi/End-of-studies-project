@@ -1,0 +1,7 @@
+tout ce qui est mise a jour automatique
+
+
+add support of arm arch to an old project (ooohhhh a total mess) since 2007 or what
+
+
+to start camera: "sudo modprobe bcm2835-v4l2"
