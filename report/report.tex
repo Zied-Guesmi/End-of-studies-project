@@ -104,32 +104,24 @@
     
     \ifdefineChapter
         \includeonly{1.0-Introduction/intoduction}
-        % \includeonly{2.0-Context/context}
-        % \includeonly{3.0-State of the art/state}
-        % \includeonly{4.0-Requirements/requirements}
-        % \includeonly{5.0-Design/design}
-        % \includeonly{6.0-Implementation/implementation}
-        % \includeonly{7.0-Conclusion/conclusion}
     \fi
     
     % ******************************** Front Matter ********************************
     \begin{document}
     
-    \frontmatter
+    % \frontmatter
      
     \maketitle
     
-    \include{0.3-Dedication/dedication}
-    \include{0.4-Acknowledgment/acknowledgment}
-    \include{0.5-Abstract/abstract}
+    % \include{0.3-Dedication/dedication}
+    % \include{0.4-Acknowledgment/acknowledgment}
+    % \include{0.5-Abstract/abstract}
     
     % *********************** Adding TOC and List of Figures ***********************
     
     \tableofcontents
-    
-    \listoffigures
-    
-    \listoftables
+    % \listoffigures
+    % \listoftables
     
     % \printnomenclature[space] space can be set as 2em between symbol and description
     %\printnomenclature[3em]
@@ -160,8 +152,8 @@
     % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
     % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
     
-    \bibliographystyle{apalike}
-    %\bibliographystyle{unsrt} % Use for unsorted references  
+    % \bibliographystyle{apalike}
+    \bibliographystyle{unsrt} % Use for unsorted references  
     %\bibliographystyle{plainnat} % use this to have URLs listed in References
     \cleardoublepage
     \bibliography{8.0-References/references} % Path to your References.bib file
@@ -172,14 +164,14 @@
     % specified in the preamble.tex file in the custombib section.
     % Comment out the lines related to natbib above and uncomment the following line.
     
-    %\printbibliography[heading=bibintoc, title={References}]
+    % \printbibliography[heading=bibintoc, title={References}]
 
     \end{spacing}
     
 
     % ********************************** Appendices ********************************
     
-    % \begin{appendices} % Using appendices environment for more functunality
+    % \begin{appendices} % Using appendices environment for more functionality
     
     % \include{Appendix1/appendix1}
     % \include{Appendix2/appendix2}

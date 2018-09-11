@@ -14,9 +14,10 @@
 %******************************** Section 1.2 *********************************%
 \section{Project Background}
   This project is about desining and implementing a positive energy worker.
-  In addition to powering iExec's infrustructure, this worker serves at the same
-  time as a usefull IoT device. It is achieved in the context of the preparation of
-  the end of studies project submitted to obtain computer science engineering degree.
+  A Raspberry Pi based system that powers iExec's infrustructure and serves - at the same
+  time - as an IoT device to embraces the Edge computing concept.
+  It is achieved in the context of the preparation of the end of studies project submitted to
+  obtain computer science engineering degree.
 
 %******************************** Section 1.3 *********************************%
 \section{Host company}
@@ -27,8 +28,7 @@
     % \label{iExec's logo}
   \end{figure}
 
-  Started in 2016, iExec was co-founded by Dr. Gilles Fedak and Pr. Haiwu He.
-
+  Started in 2016, iExec\cite{iExec} was co-founded by Dr. Gilles Fedak and Pr. Haiwu He.\\
   Ph.D, CEO and Co-Founder, Dr. Gilles Fedak has been a permanent INRIA research scientist since
   2004 at the ENS in Lyon, France. His research interests lie in Parallel and Distributed
   Computing, with a particular emphasis on the problematic of using large and loosely-coupled
@@ -48,12 +48,12 @@
   research institutes in the field of Desktop Grid computing. The idea of Desktop Grid
   (aka. Volunteer Computing) is to collect the computer resources that are underutilized on the
   Internet to execute very large parallel applications at the fraction of the cost of a
-  traditional supercomputer. iExec relies on XtremWeb-HEP, a mature, solid, and open-source Desktop
+  traditional supercomputer. iExec relies on XtremWeb-HEP\cite{xtremweb}, a mature, solid, and open-source Desktop
   Grid software which implements all the needed features: fault-tolerance, multi-applications,
   multi-users, hybrid public/private infrastructure, deployment of virtual images, data management,
   security and accountability, and many more.
 
-  iExec is developing a new Proof-of-Contribution (PoCo) protocol, that will allow off-chain
+  iExec is developing a new Proof-of-Contribution\cite{POCO} (PoCo) protocol, that will allow off-chain
   consensus. Thanks to the Proof-of-Contribution, external resource providers will have the usage
   of their resources certified directly in the blockchain.
 
@@ -61,7 +61,7 @@
   that will promote a new form of distributed governance, involving key HPC, big data and cloud
   industry leaders.
 
-  iExec is using its ERC20-compliant token to provide standard and secure payments. RLC which stands for
+  iExec is using its ERC20-compliant token to provide standard and secure payments. RLC\cite{RLC} which stands for
   "Run on Lots of Computers", can be securely and easily stored, transferred, traded, divided and used
   to make payments. This widely adopted cryptocurrency (87 million RLC are currently in circulation)
   is used to access all iExec's services.
@@ -75,51 +75,33 @@
   comes the massive consumption of electricity. In 2016, global data centers used roughly 416
   terawatts (more than 90 billion kilowatt-hours for just U.S. data centers) or about 3\% of the
   total electricity in terms of percentage, which is nearly 40\% more than the entire United Kingdom.
-  Predictions have show that this consumption will double every four years.
-  % source: https://www.forbes.com/sites/forbestechcouncil/2017/12/15/
-  % why-energy-is-a-big-and-rapidly-growing-problem-for-data-centers/#682a483c5a30
-  % 24/08/2018 11:00
+  Predictions have shown that this consumption will double every four years\cite{consumption-prediction}.
 
-  As the “internet of everything” brings innovations such as driverless cars and smart watches,
-  the vast network of data centers that have sprung up in the past decade will spread. Moreover,
-  the explosion of processing-power demanding technologies like artificial intelligence and
-  blockchain is just adding fuel to the fire. For instance, in Japan, studies have shown that
-  its data centers would consume its entire electricity supply by 2030 if growth continues at
-  today's rate.
-
-  On top of that, internet-connected devices is changing the entire landscape because IoT is
+  As processing-power demanding technologies like artificial intelligence and blockchain have
+  been appearing, the network of data centers that have sprung up in the past decade will spread.
+  Moreover, internet-connected devices is changing the entire landscape because IoT is
   projected to exceed 20 billion devices by 2020. Given there are currently 10 billion devices,
-  doubling that will require massive increases to our data center infrastructure, which will
-  massively increase our electricity consumption.
+  doubling that will require huge increases to our data center infrastructure, which will
+  massively grow our electricity consumption, and that is just adding fuel to the fire.
 
-  % It's time that disruptive innovation on the compute side comes to market soon, giving us faster
-  % compute engines and architectures that deliver more computational density per watt.
+  There has been some trials to remedy the situation such as using other alternatives to silicon in
+  data storage and counting on virtualisation to reduce the use of physical machines, but all of that
+  still can not keep up against the extreme consumption rate.
 
-  We are currently stuck with architectures developed some 40 years ago that are not going to
-  satisfy humanity’s insatiable thirst for a lot more processing, much faster processing and
-  much more energy-efficient processing.
-
-  - embrace fog computing
-  - use IoT devices in the right way
-  - totally green
-
-  Trend to Fog/Edge computing
-
-  \begin{figure}[!h]\centering
-    \includegraphics[width=.8\columnwidth]{2.0-Context/figs/Energy-consumption-graph.png}
-    \caption{Energy consumption}
-    \label{Energy-consumption-graph}
-  \end{figure}
-
-  % - Enegy Consumption \\
-  % - Idle IoT devices \\
-  % - Idle Computing resources 
+  % \begin{figure}[!h]\centering
+  %   \includegraphics[width=.8\columnwidth]{2.0-Context/figs/Energy-consumption-graph.png}
+  %   \caption{Energy consumption}
+  %   \label{Energy-consumption-graph}
+  % \end{figure}
 
 %******************************** Section 1.5 *********************************%
 \section{Suggested Solution}
-  - Positive Energy Worker
-  - Usefull use cases
+  - use IoT devices in the right way - Idle IoT devices 
   - Multi-functionality IoT devices
+  - totally green
+  - Trend to Edge computing
+
+  
 
 %******************************** Section 1.6 *********************************%
 \section{Adopted Methodology}
