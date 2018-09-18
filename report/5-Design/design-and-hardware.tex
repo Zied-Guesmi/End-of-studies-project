@@ -1,0 +1,138 @@
+%!TEX root = ../report.tex
+%*******************************************************************************
+%                              Design & Hardware                               %
+%*******************************************************************************
+
+
+\chapter{Design \& Hardware}
+
+
+\section{Introduction}
+    Once the system requirements are identified, the next step would be to prepare the conceptual representation
+    of the project. This part focuses just on the worker, specifying its requirements and going all the way
+    from the software and the communication with the scheduler to the hardware specifications.
+
+\section{Desing \& Technical Specifications}
+
+    The following diagram presents the interaction between the different components of the worker.
+    First of all, the connection between the components is guaranteed by the TCP protocol.
+    The ports 4321, 4322, 4323 and 4324 should be open in both machines, the worker and the scheduler.
+    At the start-up, the worker downloads the CA certificate. This part is mandatory for the program
+    to continue working.
+
+    \clearpage
+
+    \begin{figure}[!h]\centering
+        \includegraphics[width=.9\columnwidth]{5-Design/figs/worker-diagram.png}
+        \caption{Global overview of the worker design}
+    \end{figure}
+
+    We explain in the following subsections the role and requirements of each
+    component.
+
+    \subsection{Worker}
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.9\columnwidth]{5-Design/figs/worker.png}
+            \caption{The worker internal sortware components}
+        \end{figure}
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.4\columnwidth]{5-Design/figs/raspberry.jpg}
+            \caption{The worker internal sortware components}
+        \end{figure}
+
+        The worker runs a docker image of XtremWeb worker. This image has to be optimized for devices with
+        limited resources like the Raspberry Pi board.
+        XtremWeb does not support ARM architecture natively so this support should be introduced
+        to the new version of the middleware. Luckily docker is available for this architecture which simplifies
+        the task.
+
+    \subsection{Blockchain}
+    
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.3\columnwidth]{5-Design/figs/blockchain-logo.png}
+            \caption{The solar panel}
+        \end{figure}
+
+        The blockchain part is represented by the Geth node where we deploy the iExec smart contracts.
+        The worker should take care of the necessary blokchain configuration for the proper functionning
+        of the system, so it should provide a wallet with sufficient funds (in RLC). The scheduler locks
+        an amount of RLC when an execution is starting, so the worker should have the minimum amount
+        required by the operation. If these requirements are not satisfied the program will crash.
+
+    \subsection{Use case diagram}
+    TODO
+
+
+\section{Hardware choice}
+
+    \subsection{Solar Panel}
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.6\columnwidth]{5-Design/figs/solar-panel.png}
+            \caption{The solar panel}
+        \end{figure}
+
+        A Photovoltaic solar panels is used to power the worker. It absorbs sunlight as a source of energy to
+        generate electricity and charge the battery. In this case we use a panel with high conversion
+        efficiency: 60 watt SUNPOWER mono-crystalline with conversion efficiency up to 25\% which is much
+        higher than common solar panel charger (15\%).
+
+        Reference of the chosen panel: SUAOKI 60W Portable Sunpower Mono-crystalline Solar Panel with DC 18V and USB
+        5V Output Charger.\newline
+        Output: up to 60W - USB: 18v/3.4A, DC: 5v/2.5A.
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.4\columnwidth]{5-Design/figs/panel.jpg}
+            \caption{SUNPOWER solar panel}
+        \end{figure}
+
+        This panel should be able to charge the battery in merely 8 hours during a sunny day. The Raspberry
+        Pi board consumes 1A for a maximum utilization of the CPU and some plugged sensors. For a battery
+        capacity of 50000mA, the worker can stay up for 24 hours for a full battery without any source of
+        solar light.
+
+    \subsection{Battery}
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.3\columnwidth]{5-Design/figs/battery.jpg}
+            \caption{50000 mA Battery}
+        \end{figure}
+
+        We suppose that the battery should be able to store electricity for, at least, two days. With a
+        consumption of maximum 24A/day, the battery should store 50A. It should also contain a 5V output
+        to power the worker with the right intensity.
+
+        Reference of the chosen battery: MAXOAK 50000mAh 5/12/20v Portable Charger External Battery Power Bank.
+
+    \subsection{Sensors}
+        The worker uses different sensors to interact with the outside world. We can imagine multiple systems
+        with a lot of use cases. We will take as example two use cases:
+
+        \underline{Surveillance camera:} the worker has an 8 megapixel native resolution sensor-capable of 3280 x 2464
+        pixel static images camera to achieve the mission of a surveillance system that streams video and detects motions.
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.2\columnwidth]{5-Design/figs/camera.jpg}
+            \caption{Raspberry Pi camera}
+        \end{figure}
+
+
+        \underline{Weather station:} in this case the worker uses a humidity, pressure, temprature and
+        orientation senors to build a weather station. It collects weather data and applies some
+        processing on it before sending it to a weather forcast service. The data processing can be done
+        with an iExec dapp locally on the worker and this model has many advantges such as pushing the
+        processing to the edge of the network to reduce latency caused by data transfer and enhance data
+        privacy because it is not leaving the device.
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=.3\columnwidth]{5-Design/figs/sense-hat.jpg}
+            \caption{Raspberry Pi Sense HAT}
+        \end{figure}
+
+
+\section{Conclusion}
+    In this chapter, we worked on the first place on designing the worker taking in consideration the resources
+    limitation of the worker board. In the second section, we worked on choosing the hardware that suits
+    the requirements, therefore we pass to the implementation part to shape our design.
