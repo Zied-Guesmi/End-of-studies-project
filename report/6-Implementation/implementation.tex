@@ -8,31 +8,39 @@
 
 
 \section{Introduction}
-- intro
+After fixing the system design and choosing the apropriate hardware, it is time to implement the worker.
+The Implementation consists of two parts, assembling the hardware components and preparing the software.
+To test the worker we develop some dapps for ARM architecture and integrate them in the iExec plateform.
+In the last section we illustrate the work that has been done with some pictures of the worker prototype.
 
 \section{Work environment}
-    \subsection{Hardware environment}
 
-    \subsection{Software environment}
+   \begin{itemize}
+       \item \underline{Amazon AWS instance as a scheduler and a blockchain node}
+       \item \underline{3 Raspberry Pi boards as a cluster of workers}
+       \item \underline{A laptop as a client to test the infrastructure}
+   \end{itemize}
 
-    blockchain: wallet using sdk --> ansible to verify
+\section{Software environment}
 
-    optimization: There are many techniques to reduce the size of the
-    image like multi-stage build and removing the cache whenever it is necessary. After installing all
-    the dependencies in the image, we copy the jar files and the scripts.
-    specs --> heap size
+    \subsection{Blockchain}
+    Generate wallets using the SDK
 
+    \subsection{XtremWeb}
     add arm support to the scheduler - cross compiling resin + qemu
 
-    cluster --> swarm - cluster + automation
+    \subsection{Docker}
+    % optimization: There are many techniques to reduce the size of the
+    % image like multi-stage build and removing the cache whenever it is necessary. After installing all
+    % the dependencies in the image, we copy the jar files and the scripts.
+    % specs --> heap size
 
-    docker
+    \subsection{Worker cluster}
+    cluster --> swarm - cluster - ansible to verify
 
-    \subsection{Dapps to test the infrastructure}
-    develop dapps: names
+\section{Dapps to test the infrastructure}
 
-
-    \subsection{Documentation}
+\section{Documentation}
     confluence
 
 \section{Illustration}
