@@ -4,7 +4,7 @@
 %*******************************************************************************
 
 
-\chapter{Requirements Analysis}
+\chapter{Global Ecosystem \& Requirements}
 
 %******************************** Section 3.1 *********************************%
 \section{Introduction}
@@ -14,13 +14,13 @@
     them.
 
 %******************************** Section 3.2 *********************************%
-\section{Global System Analysis}
+\section{Global ecosystem}
 
     \subsection{iExec ecosystem}
-        iExec creates a global and open market where computing power is traded like a commodity. Its uses the blockchain
+        iExec creates a global and open market where computing power is traded like a commodity. It uses the blockchain
         as the laying underground so everything is certified on top of it. This guarantees multiple services such as
         the payments and the PoCo (...).
-        This plateform has different agents\cite{iexec-architecture}:
+        This platform has different agents\cite{iexec-architecture}:
         \begin{itemize}
             \item \textbf{The user} who issues computing resources to run decentralized applications. He is identified by
             his wallet and uses RLC to pay for the rented resources.
@@ -44,13 +44,29 @@
 
         The following figure\cite{iexec-marketplace} presents the iExec ecosystem and highlights the different parts of it
         including the marketplace and the worker pools.
+        
+        The marketplace is the platform that contains the available resources, so users can purchase them.
+        
+        Worker can join existing pools or create their own ones. The worker pools compete against each others
+        in order to attract workers.
+
+        iExec released a dapp store to list all the available applications. Dapps providers can contribute to
+        the store and monetize their applications.
+
+        After receiving an order, the scheduler replicates the task on multiple workers. Those workers send
+        the result back to the scheduler, then the verification is done by the PoCo by comparing the results
+        and achieving a consensus on one of them.
+
+        Once the verification process is finished, the scheduler finalizes the payment and the workers
+        receive their rewards in RLC.
+    
 
         \begin{figure}[!h]
             \includegraphics[width=\columnwidth]{4-Requirements/figs/iexec-marketplace.png}
             \caption{iExec marketplace}
         \end{figure}
 
-    \subsection{General Sequence Diagram}
+    \subsection{General sequence diagram}
         The worker is one of three components of the global architecture, in addition to the scheduler and the user.
         The user starts the process by issuing and order (sending a job to be executed). The scheduler does the verification
         of the funds for all parts. It checks the accounts of the user and the worker and insures that they have enough RLC,
@@ -60,8 +76,10 @@
         and uploads the result back to the scheduler. The worker has always to communicate with the scheduler to update his
         status (alive, working, waiting for work...) and give the scheduler the ability to track the execution process.\newline
 
-        The sequence diagram illustrates the details of all the process:
+        The following sequence diagram illustrates the details of all the process:
         
+        \clearpage
+
         \begin{figure}[p]
             \vspace*{-2cm}
             \makebox[\linewidth]{
@@ -78,19 +96,21 @@
             \caption{iExec core sequence diagram - part 2}
         \end{figure}
 
+        \clearpage
+
 %******************************** Section 3.3 *********************************%
 \section{Requirements}
-    \subsection{Functional Requirements}
-        The project aims to povide a certain number of functionalities, some of them are absolutely mondatory
+    \subsection{Functional requirements}
+        The project aims to provide a certain number of functionalities, some of them are absolutely mandatory
         and some others depend on the use case. The main features are listed below.
         \begin{itemize}
             \item \textbf{Execute jobs sent by the middleware:} The worker is a part of iExec's infrastructure, so it
             should execute any type of job sent by XtremWeb middleware, the source of these tasks is blockchain
             dapps that need computation resources. The only constraint that those tasks should repect is the
             specs limitation of the device, Raspberry Pi cards for instance. It's the responsibility of
-            the dapps developer and the task sender to deal with this contraint.
+            the dapps developer and the task sender to deal with this constraint.
 
-            \item \textbf{Ability to prove execution:} The proof-of-contribution\cite{POCO} is the protocole that
+            \item \textbf{Ability to prove execution:} The proof-of-contribution\cite{POCO} is the protocol that
             verifies the execution of tasks, so the worker should be able to contribute to the process of the
             verification. In order to achieve that, the worker should have an identity represented by its
             blockchain wallet and its account in the iExec ecosystem.
@@ -98,14 +118,14 @@
             \item \textbf{Accomplish the mission of an IoT device:} The worker is always available to execute tasks sent by
             users, but it can also be considered as an IoT device that processes/sends data collected by its sensors.
             For instance, the worker can be a surveillance camera and analyse the video stream to detect motions or
-            a weather station that collects informations about the temprature, the humidity, the wind speed ...etc.
+            a weather station that collects informations about the temperature, the humidity, the wind speed ...etc.
 
             \item \textbf{Ability to manage a cluster of workers:} The project is meant to be applicable on a large number of
-            workers, so it is hard to manage them seperatly, that is why it is necessary to have a way to manage them
+            workers, so it is hard to manage them separately, that is why it is necessary to have a way to manage them
             easily as a cluster.
         \end{itemize}
 
-    \subsection{Non-Functional Requirements}
+    \subsection{Non-functional requirements}
         The project emphasizes some extremely important non-functional requirements. Those key specifications should be
         respected in order to maintain the spirit of the project.
         \begin{itemize}

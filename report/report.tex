@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{0.0-Documentclasses/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,oneside,times,numbered,print,index]{0.0-Documentclasses/PhDThesisPSnPDF}
 % \documentclass[a4paper,12pt,times,numbered,print,index]{report}
 
     % ******************************************************************************
@@ -110,13 +110,14 @@
     \begin{document}
     
     \frontmatter
-     
-    \maketitle
+
+    % \maketitle
     
-    \include{0.3-Dedication/dedication}
-    \include{0.4-Acknowledgment/acknowledgment}
-    \include{0.5-Abstract/abstract}
-    
+    \include{0.3-Sheets/sheets}
+    \include{0.4-Dedication/dedication}
+    \include{0.5-Acknowledgment/acknowledgment}
+    \include{0.6-Frensh-summary/summary}
+
     % *********************** Adding TOC and List of Figures ***********************
     
     \tableofcontents
@@ -158,6 +159,14 @@
     \cleardoublepage
     \bibliography{8-References/references} % Path to your References.bib file
     
+    % ********************************** Appendices ******************************
+    % \bibliography{9-Appendices/appendix}
+    
+    % ********************************** Summaries ******************************
+    \bibliography{10.0-English-summary/summary}
+    \bibliography{10.1-Frensh-summary/summary}
+    \bibliography{10.2-Arabic-summary/summary}
+
     
     % If you would like to use BibLaTeX for your references, pass `custombib' as
     % an option in the document class. The location of 'reference.bib' should be

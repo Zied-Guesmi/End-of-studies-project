@@ -6,16 +6,17 @@
 
 \chapter{Design \& Hardware}
 
-
+%******************************** Section 4.1 *********************************%
 \section{Introduction}
     Once the system requirements are identified, the next step would be to prepare the conceptual representation
     of the project. This part focuses just on the worker, specifying its requirements and going all the way
     from the software and the communication with the scheduler to the hardware specifications.
 
-\section{Desing \& Technical Specifications}
+%******************************** Section 4.2 *********************************%
+\section{Desing and technical specifications}
 
     The following diagram presents the interaction between the different components of the worker.
-    First of all, the connection between the components is guaranteed by the TCP protocol.
+    The connection between the components is guaranteed by the TCP protocol.
     The ports 4321, 4322, 4323 and 4324 should be open in both machines, the worker and the scheduler.
     At the start-up, the worker downloads the CA certificate. This part is mandatory for the program
     to continue working.
@@ -37,10 +38,10 @@
             \caption{The worker internal sortware components}
         \end{figure}
 
-        \begin{figure}[!h]\centering
-            \includegraphics[width=.4\columnwidth]{5-Design/figs/raspberry.jpg}
-            \caption{The worker internal sortware components}
-        \end{figure}
+        % \begin{figure}[!h]\centering
+        %     \includegraphics[width=.4\columnwidth]{5-Design/figs/raspberry.jpg}
+        %     \caption{The worker internal sortware components}
+        % \end{figure}
 
         The worker runs a docker image of XtremWeb worker. This image has to be optimized for devices with
         limited resources like the Raspberry Pi board.
@@ -64,8 +65,12 @@
     \subsection{Use case diagram}
     TODO
 
+    whats use case diagram acteur 
+    acteurs
+    describe use cases: precondition
 
-\section{Hardware choice}
+%******************************** Section 4.3 *********************************%
+\section{Hardware}
 
     \subsection{Solar Panel}
 
@@ -131,7 +136,7 @@
             \caption{Raspberry Pi Sense HAT}
         \end{figure}
 
-
+%******************************** Section 4.4 *********************************%
 \section{Conclusion}
     In this chapter, we worked on the first place on designing the worker taking in consideration the resources
     limitation of the worker board. In the second section, we worked on choosing the hardware that suits
