@@ -13,7 +13,7 @@
     from the software and the communication with the scheduler to the hardware specifications.
 
 %******************************** Section 4.2 *********************************%
-\section{Desing and technical specifications}
+\section{Design and technical specifications}
 
     The following diagram presents the interaction between the different components of the worker.
     The connection between the components is guaranteed by the TCP protocol.
@@ -57,17 +57,66 @@
         \end{figure}
 
         The blockchain part is represented by the Geth node where we deploy the iExec smart contracts.
-        The worker should take care of the necessary blokchain configuration for the proper functionning
+        The worker should take care of the necessary blokchain configuration for the proper functioning
         of the system, so it should provide a wallet with sufficient funds (in RLC). The scheduler locks
         an amount of RLC when an execution is starting, so the worker should have the minimum amount
         required by the operation. If these requirements are not satisfied the program will crash.
 
     \subsection{Use case diagram}
-    TODO
+        Use case diagram describes the functionality provided by a system in terms of actors, their
+        goals represented as use cases, and any dependencies among those use cases.
+        It is therefore to have an external view of the functioning of the system, which on the one hand
+        defines the behavior of the system in its environment and on the other hand to identify the needs
+        and objectives expected of the actors. At this stage we're going to focus on the worker as our
+        system. \newline
+        At first we start by introducing the interacting actors, then we present a description about
+        functionalities provided. \newline \newline
+        \textit{Actors: }
+        An actor represents a role played by an external entity that directly interacts with the system
+        being studied. Our actors are:
+        \begin{itemize}
+            \item \textbf{The scheduler: }
+            it sends jobs to the worker, waits for the execution to finish, verifies the results and does
+            the payment transactions.
+            \item \textbf{The external service: }
+            This actor does not have effect on the system (worker). It receives the data sent by the worker.
+            \item \textbf{The solar panel: }
+            It provides the necessary energy for the worker.
+        \end{itemize}
+        \textit{Use cases: }
+        A use case represents a set of action sequences that are performed by the system and that produce
+        an observable result of interest for a particular actor.
 
-    whats use case diagram acteur 
-    acteurs
-    describe use cases: precondition
+        \begin{itemize}
+            \item \textbf{Scheduler}
+                \begin{itemize}
+                    \item Delegate jobs: the scheduler sends the description of received tasks to the worker
+                    to execute it.
+                    \item Get the result of execution: after the execution the worker sends the result back
+                    to the scheduler.
+                    \item Pay execution: the scheduler sends the reward to the worker.
+                \end{itemize}
+            
+            \item \textbf{External service}
+                \begin{itemize}
+                    \item Subscribe to data stream: The service subscribes to receive the data.
+                    \item Receive processed data stream: The service receives the collected data sent by the
+                    worker.
+                \end{itemize}
+            
+            \item \textbf{Solar panel}
+                \begin{itemize}
+                    \item Implement the energy produced: the panel supplies the worker with the necessary energy.
+                \end{itemize}
+        \end{itemize}
+
+
+        \begin{figure}[!h]\centering
+            \includegraphics[width=\columnwidth]{5-Design/figs/use-case-diagram.png}
+            \caption{Worker use case diagram}
+        \end{figure}
+
+        \clearpage
 
 %******************************** Section 4.3 *********************************%
 \section{Hardware}
