@@ -9,10 +9,10 @@
 
 %******************************** Section 5.1 *********************************%
 \section{Introduction}
-After fixing the system design and choosing the appropriate hardware, it is time to implement the worker.
-The Implementation consists of two parts, assembling the hardware components and preparing the software.
-To test the worker we develop some dapps for ARM architecture and integrate them in the iExec platform.
-In the last section we illustrate the work that has been done with some pictures of the worker prototype.
+    After fixing the system design and choosing the appropriate hardware, it is time to implement the worker.
+    The implementation consists of two parts, assembling the hardware components and preparing the software.
+    To test the worker we developed Dpps for ARM architecture and integrated them in the iExec platform.
+    In the last section we illustrate the work that has been done with some pictures of the worker prototype.
 
 %******************************** Section 5.2 *********************************%
 \section{Work environment}
@@ -28,15 +28,15 @@ In the last section we illustrate the work that has been done with some pictures
         into a computer monitor or TV, and uses a standard keyboard and mouse. It is a capable little device
         that enables people of all ages to explore computing, and to learn how to program in languages like
         Scratch and Python. It is capable of doing everything we  expect a desktop computer to do, from
-        browsing the internet and playing high-definition video, to making spreadsheets, word-processing, and
+        browsing the internet and playing high-definition videos, to making spreadsheets, word-processing, and
         playing games\cite{raspberry-pi}.
 
-        The worker software is installed in the board, all the binary files are packaged in a docker image
+        The worker software is installed on the board, all the binary files are packaged in a docker image
         and pushed to docker hub. The worker downloads the required version of the image and runs it.
 
         \item \textit{The client machine: }
-        We use a client machine to test the infrastructure. We use the iExec SDK to deploy dapps with ARM
-        binaries, then we add available orders in the database and we buy them. Those order are executed in
+        We use a client machine to test the infrastructure. We use the iExec SDK to deploy Dapps with ARM
+        binaries, then we add available orders in the database and buy them. Those orders are executed on
         the Raspberry Pi workers.
    \end{itemize}
 
@@ -111,7 +111,7 @@ In the last section we illustrate the work that has been done with some pictures
         \item \textit{Testing}
             \begin{itemize}
                 \item \textit{iExec SDK: }
-                We used the SDK to deploy dapps for ARM architecture on the plateform. After getting the dapp
+                We used the SDK to deploy Dapps for ARM architecture on the platform. After getting the Dapp
                 address we run tests to start tasks on the workers and get the result, which confirms that the
                 worker is ready to accept jobs from any source.
             \end{itemize}
@@ -123,8 +123,8 @@ In the last section we illustrate the work that has been done with some pictures
                 that displays Docker services running on a Docker Swarm in a diagram. It displays also some basic
                 informations of cluster's nodes.
                 \item \textit{Weave Scope: }
-                A monitoring, visualisation and management tool for Docker \& Kubernetes. It automatically generates
-                a map of application, enabling the intuitive understanding, monitoring, and controling of containerized,
+                A monitoring, visualization and management tool for Docker \& Kubernetes. It automatically generates
+                a map of application, enabling an intuitive understanding, monitoring, and controlling of containerized,
                 microservices based application.
                 \item \textit{Adminer: }            
                 Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP.
@@ -138,7 +138,7 @@ In the last section we illustrate the work that has been done with some pictures
 %******************************** Section 5.4 *********************************%
 \section{Achievements}
     We fixed in previous chapters the functional and non-functional requirements of our project. We evaluate
-    in this section the achieved work to satisfy those requirements.
+    in this section the achieved work and to what point we satisfied those requirements.
 
     \subsection{Blockchain}
     The blockchain is a critical factor for the functioning of the worker. Although, it is its mission
@@ -166,14 +166,14 @@ In the last section we illustrate the work that has been done with some pictures
     A computer cluster is a set of computers that work together so that they can be viewed as a single system.
     In our case we have a cluster of Raspberry Pi workers and it is so hard to control them independently.
     As a solution we use two key technologies.
-    
+
     The first one is Ansible, which is a configuration management tool.
     Ansible gives the ability of checking the dependencies on the cluster machines, and checking the presence
     of wallets.
 
     The second revolutionary technology is Docker swarm which is a tool that allows to orchestrate a cluster
     of containers running instances of a (multiple) service(s). Swarm is mandatory to simplify this task
-    because we can control all the cluster nodes from a single machine without having to connect on every node
+    because we can control all the cluster nodes from a single machine without having to connect to every node
     to check status or start processes. Starting and stopping the XtremWeb software have not been easier.
 
     \subsection{Positive energy}
@@ -195,36 +195,35 @@ In the last section we illustrate the work that has been done with some pictures
 
     \textit{The solar panel performance:}
     Under 8 sunny hours in a medium cloudy day, the panel charges the battery with enough electricity for 18
-    hours while the worker is pulling charge from the battery simultaneously. This duration is not the required
+    hours while the worker is running simultaneously. This duration is not the required
     duration for a complete autonomy of the worker but in normal conditions the panel would provide enough
     charge for a continuous performance. We tested it for a duration of a week and the worker stayed up for
     all this period.
 
     \subsection{Usage of sensors to provide data}
-    One of the mission of the worker is to simulate an IoT device, so we added to the worker the possibility
+    One of the missions of the worker is to simulate an IoT device, so we added to the worker the possibility
     to interact with the environment and get data from it. We used multiple types of sensors to get measures
     such as temperature, humidity, pressure (...) and send them to an external service. We used also a camera
     to monitor a room, the stream of data is analysed to detect motions which highlights here the concept
     of Edge Computing. The data is processed locally instead of sending it like it is to the cloud.
 
-
-    \subsection{Development of dapps to test the infrastructure}
+    \subsection{Development of Dapps to test the infrastructure}
     After preparing the worker, deploying all the environment (scheduler, blockchain node...) and testing
-    the solar panel performance to get some statistics, it is time to test the worker with real life tasks
-    instead of just lunching the stress command. But before we can test it, we need dapps that contains ARM
+    the solar panel performance to get some statistics, it is time to test the worker with real tasks
+    instead of just lunching the stress command. But before we can test it, we need Dapps that contains ARM
     binaries so they can be executed on the Raspberry Pi. This part took some important time and effort because
-    we tried to develop some resources demanding applications. We opted in our choices for image processing
-    and text to speech applications. We present in this subsection the developed dapps and the results of the
+    we tried to develop some computation demanding applications. We opted in our choices for image processing
+    and text to speech applications. We present in this subsection the developed Dapps and the results of the
     tests.
 
     \begin{itemize}
         \item \textit{Object detection: }
-        It is a python dapp that uses opencv to detect objects from image. It uses
-        MobileNets\cite{mobile-nets} a Convolutional Neural Networks for Mobile Vision Applications.
+        It is a python Dapp that uses opencv to detect objects from images. It uses
+        MobileNets\cite{mobile-nets} a Convolutional Neural Network for Mobile Vision Applications.
         We call these networks “MobileNets” because they are designed for resource constrained
         devices such as smartphones.
-        The application takes a set of images as input, it passes them throw the Convolutional
-        Neural Network, it marks the objects and determines their positions in the image.
+        The application takes a set of images as input, it passes them throw the
+        Neural Network, it marks the objects and determines their positions in the images.
         Every output image contains the detected objects.
 
         \clearpage
@@ -238,7 +237,7 @@ In the last section we illustrate the work that has been done with some pictures
 
         \begin{figure}[!h]\centering
             \includegraphics[width=.6\columnwidth]{6-Implementation/figs/object-detector-exp-2.jpg}
-            \caption{Detected aeroplane}
+            \caption{Detected aeroplane object}
         \end{figure}
 
         Github repository\cite{object-detector}.
@@ -249,15 +248,14 @@ In the last section we illustrate the work that has been done with some pictures
 
         \begin{figure}[!h]\centering
             \includegraphics[width=.3\columnwidth]{6-Implementation/figs/image-to-text-logo.png}
-            \caption{Image to text dapp logo}
+            \caption{Image to text Dapp logo}
         \end{figure}
 
         \vspace{50px}
 
-        image2text is an Ethereum ready dapp that applies google's tesseract-OCR engine to extract
-        text from images. It is written in python and opencv and tesseract-ocr. The dapp takes as
-        input a set of images and returns, for each one of them, a text file containing the
-        extracted text.
+        image2text is an Ethereum ready Dapp that applies google's tesseract-OCR engine to extract
+        text from images. It is written in python and employs opencv and tesseract-ocr. The Dapp takes as
+        input a set of images and returns, for each one of them, a file containing the extracted text.
 
         \vspace{50px}
 
@@ -274,7 +272,7 @@ In the last section we illustrate the work that has been done with some pictures
 
         \begin{figure}[!h]\centering
             \includegraphics[width=.2\columnwidth]{6-Implementation/figs/text-to-speech-logo.png}
-            \caption{Text to speech dapp logo}
+            \caption{Text to speech Dapp logo}
         \end{figure}
 
         text2speech uses mimic text-to-speech engine to convert text files to speech and save them
@@ -288,11 +286,11 @@ In the last section we illustrate the work that has been done with some pictures
 
         \begin{figure}[!h]\centering
             \includegraphics[width=.2\columnwidth]{6-Implementation/figs/color-transfer-logo.png}
-            \caption{Color transfer dapp logo}
+            \caption{Color transfer Dapp logo}
         \end{figure}
 
-        This dapp transfers the colors of one image to an other. It is also written in python,
-        takes a target and a source images and creates a new result image where the content is
+        This Dapp transfers the colors of one image to an other. It is also written in python,
+        takes a target and a source images and creates a new resultant image where the content is
         the target's and the colors are taken from the source picture.
 
         \clearpage
@@ -328,7 +326,7 @@ In the last section we illustrate the work that has been done with some pictures
 %******************************** Section 5.5 *********************************%
 \section{Illustration}
     In this last section, we illustrate the project with pictures of the worker, the solar panel, the battery
-    and the sensors. Then we put all the components together.
+    and the sensors and all the components together. At the end, we show a completed execution example.
 
     \begin{figure}[!h]\centering
         \includegraphics[width=\columnwidth]{6-Implementation/figs/illustration-1.jpg}
@@ -356,12 +354,29 @@ In the last section we illustrate the work that has been done with some pictures
     \end{figure}
 
     \begin{figure}[!h]\centering
+        \includegraphics[width=\columnwidth]{6-Implementation/figs/illustration-8.png}
+        \caption{Streamed video from the camera}
+    \end{figure}
+
+    \begin{figure}[!h]\centering
         \includegraphics[width=\columnwidth]{6-Implementation/figs/illustration-6.jpg}
         \caption{The weather station}
+    \end{figure}
+
+    \begin{figure}[!h]\centering
+        \includegraphics[width=\columnwidth]{6-Implementation/figs/illustration-7.png}
+        \caption{The cluster of Raspberry Pi workers}
+    \end{figure}
+
+    \begin{figure}[!h]\centering
+        \includegraphics[width=\columnwidth]{6-Implementation/figs/illustration-9.png}
+        \caption{Completed execution with job's informations}
     \end{figure}
 
     \clearpage
 
 %******************************** Section 5.6 *********************************%
 \section{Conclusion}
-    
+    Throughout this chapter, we have presented the details of the implementation of our system by demonstrating
+    how we satisfied our requirements and showing some statistics and illustrative pictures.
+    Finally, this section allowed us to crown the previous phases.

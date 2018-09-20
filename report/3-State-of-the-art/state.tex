@@ -6,15 +6,16 @@
 
 \chapter{State of The Art}
 
-
+%******************************** Section 2.1 *********************************%
 \section{Introduction}
     Before elaborating our solution, we discuss in this section some existing approaches and their
     limitations. We define, after, multiple technologies and concepts we use in this project.
 
+%******************************** Section 2.2 *********************************%
 \section{Critical overview of the existing}
-    There has not been other trials that use the same approach as this project, but there are some other
+    There have not been other trials that use the same approach as this project, but there are some other
     attempts to remedy the problem of energy consumption in the IT field. Those solution suggest that
-    datacenters should be powered using renewable energy sources.
+    data centers should be powered using renewable energy sources.
 
     \subsection{Solar-Powered Data Centers}
         Emerson Network Power, i/o Data Centers and AISO are among the companies that have implemented on-site
@@ -32,7 +33,7 @@
 
         \begin{figure}[!h]\centering
             \includegraphics[width=.4\columnwidth]{3-State-of-the-art/figs/qts-solar-panels.jpg}
-            \caption{QTS Princeton datacenter photovoltaic solar panels}
+            \caption{QTS Princeton data center photovoltaic solar panels}
         \end{figure}
 
     \subsection{Wind-Powered Data Centers}
@@ -56,21 +57,30 @@
     \subsection{Limitations of previous solutions}
         Even though most of these approaches exist in real world, they still have problems reaching the scale
         required to successfully support the power requirements of big data centers.
-        Solar power hasn’t been widely used in data centers because it takes a very large installation of
-        photovoltaic (PV) solar panels to produce even a fraction of the energy required by most data centers.
+        Solar power has not been widely used in data centers because it takes a very large installation of
+        photovoltaic (PV) solar panels to produce even a fraction of the energy required by most of them.
         In addition to that, the cost of deploying such solutions is still exorbitant.
 
-        Furthermore, working on the datacenter itself does not take advantage of the vast network of connected
+        Furthermore, working on the data center itself does not take advantage of the vast network of connected
         devices all over the world and keeps these important resources idle and not effectively used.
 
-
+%******************************** Section 2.3 *********************************%
 \section{Notions and terminologies}
     In this section, we explain some key concepts we used during this project. Some of them
     are distributed systems related and some others describe blockchain and solar energy notions.
     \begin{itemize}
 
-        \item Blockchain
-        \item Dapps
+        \item \textbf{Blockchain:}
+        originally block chain, is a growing list of records, called blocks, which are linked using cryptography.
+        Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data (generally
+        represented as a merkle tree root hash). By design, a blockchain is resistant to modification of the
+        data. It is "an open, distributed ledger that can record transactions between two parties efficiently
+        and in a verifiable and permanent way".
+
+        \item \textbf{Distributed applications (Dapps):}
+        A decentralized application is an application that is run by many users on a decentralized network
+        with trustless protocols. They are designed to avoid any single point of failure. They typically have
+        tokens to reward users for providing computing power.
 
         \item \textbf{Ethereum blockchain:}
 
@@ -93,17 +103,17 @@
         Ethereum is a programmable Blockchain. Rather than giving users a set of pre-defined operations
         (e.g. Bitcoin transactions), Ethereum allows users to create their own operations of any complexity
         they wish. In this way, it serves as a platform for many different types of decentralized applications,
-        including but not limited to cryptocurrencies.
+        including but not limited to crypto-currencies.
         
         So basically, ethereum allows exchanging ether which makes it behave like Bitcoin does. However,
         ethereum allows anybody to write any piece of code (Smart Contract) and upload it to the Blockchain
-        so anyone can interct with it which brings us to cite that there is two types of accounts that lives
+        so anyone can interact with it which brings us to cite that there is two types of accounts that lives
         within the ethereum Blockchain: externally owned accounts which are controlled by private keys and
-        contrat accounts which are controlled by a piece of code.
+        contract accounts which are controlled by a piece of code.
         
         It is the Ethereum Virtual Machine (EVM) that executes the code of smart contracts and it is
-        generally expensive to run applications on top of ethereum because of gaz price, so iExec's
-        plateform takes this execution offchain in order to allow on-demand, secure and low-cost access to
+        generally expensive to run applications on top of it because of gaz price, so iExec's
+        platform takes this execution offchain in order to allow on-demand, secure and low-cost access to
         competitive computing infrastructures.
 
         \item \textbf{XtremWeb\cite{xtremweb}:} a data driven volunteer cloud middleware used by iExec to manage
@@ -122,9 +132,9 @@
         It is the token used to access the resources provided by the market network.
         It is the unique way of payment for application providers, server providers and data providers.
 
-        \item \textbf{iExec Software Development Kit\cite{iexec-sdk} (SDK):} this tool gives the ability to
-        deploy any legacy applications in the iExec infrastructure, and execute them through calls to
-        Ethereum smart contracts.
+        \item \textbf{iExec Software Development Kit\cite{iexec-sdk} (SDK):}
+        this tool gives the ability to deploy any legacy applications in the iExec infrastructure, and execute
+        them through calls to Ethereum smart contracts.
 
         \item \textbf{PoCo:} the Proof-of-Contribution protocol\cite{POCO} ensures that the results computed by the
         workers are valid and can be trusted by the user who required them. It controls the way multiple
@@ -180,7 +190,7 @@
         
     \end{itemize}
 
-
+%******************************** Section 2.4 *********************************%
 \section{Conclusion}
     iExec ecosystem provides an extremely important platform and set of tools that serves perfectly the purpose of
     this project. Implementing the Energy Positive Worker would make use of the architecture and the business
