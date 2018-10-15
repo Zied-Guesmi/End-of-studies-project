@@ -4,6 +4,8 @@ This repository contains my end of studies project's dissertation and presentati
 by iExec Blockchain Tech company in Lyon. It aims to create an iExec worker that used positive energy (solar energy) to execute tasks and simulate,
 at the same time, an IoT device.
 
+![worker](report/main/6-Implementation/figs/illustration-4.jpg)
+
 
 ## Dissertation
 Credits: [Template](https://www.overleaf.com/latex/templates/phd-thesis-template-for-cambridge-university-engineering-department-cued-latex-xelatex-and-lualatex-support-v2-dot-1/kgfqybfnqkdf#.W3vQSNj7RTY)
