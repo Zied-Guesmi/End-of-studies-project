@@ -1,0 +1,96 @@
+%!TEX root = ../report.tex
+%*******************************************************************************
+%                                   Context                                    %
+%*******************************************************************************
+
+\chapter{Project context}
+
+%******************************** Section 1.1 *********************************%
+\section{Introduction}
+  The aim of this chapter is to contextualize the project by giving its background,
+  presenting the host company and defining in a later section the main problem as well
+  as the way we address it.
+
+%******************************** Section 1.2 *********************************%
+\section{Project background}
+  This project is about designing and implementing a positive energy worker.
+  A Raspberry Pi based system that powers iExec's infrastructure and serves - at the same
+  time - as an IoT device to embrace the Edge computing concept.
+  It is achieved in the context of the preparations of the end of studies project submitted to
+  obtain computer science engineering degree.
+
+%******************************** Section 1.3 *********************************%
+\section{Host company}
+
+  \begin{figure}[!h]\centering
+    \includegraphics[width=.5\columnwidth]{2-Context/figs/iExec-logo.pdf}
+    \caption{iExec logo}
+  \end{figure}
+
+  Started in 2016, iExec\cite{iExec} was co-founded by Dr. Gilles Fedak and Pr. Haiwu He.
+  
+  \subsection{Mission of the company}
+    iExec aims at providing decentralized applications running on the blockchain a scalable,
+    secure and easy access to the services, data-sets and computing resources they need. This
+    technology relies on Ethereum smart contracts and allows the building of a virtual cloud
+    infrastructure that provides high-performance computing services on demand.
+
+    iExec leverages a set of research technologies that have been developed at the INRIA and CNRS
+    research institutes in the field of Desktop Grid computing. The idea of Desktop Grid
+    (aka. Volunteer Computing) is to collect the computer resources that are underutilized on the
+    Internet to execute very large parallel applications at the fraction of the cost of a
+    traditional supercomputer. iExec relies on XtremWeb-HEP\cite{xtremweb}, a mature, solid, and open-source Desktop
+    Grid software which implements all the needed features: fault-tolerance, multi-applications,
+    multi-users, hybrid public/private infrastructure, deployment of virtual images, data management,
+    security and accountability, and many more.
+
+    iExec is developing a new Proof-of-Contribution\cite{POCO} (PoCo) protocol, that will allow off-chain
+    consensus. Thanks to the Proof-of-Contribution, external resource providers will have the usage
+    of their resources certified directly in the blockchain.
+
+    iExec aims to deploy a scalable, high-performance, secure and manageable infrastructure sidechain
+    that will promote a new form of distributed governance, involving key HPC, big data and cloud
+    industry leaders.
+
+  \subsection{Company's crypto-currency}
+    iExec is using its ERC20-compliant token to provide standard and secure payments. RLC\cite{RLC} which stands for
+    "Run on Lots of Computers", can be securely and easily stored, transferred, traded, divided and used
+    to make payments. This widely adopted crypto-currency (87 million RLC are currently in circulation)
+    is used to access all iExec's services.
+
+%******************************** Section 1.4 *********************************%
+\section{Problematic}
+  With the huge increase of human dependency on Information Technology for even daily activities,
+  comes the massive consumption of electricity. In 2016, global data centers used roughly 416
+  tera-watts (more than 90 billion kilowatt-hours for just U.S. data centers) or about 3\% of the
+  total electricity in terms of percentage, which is nearly 40\% more than the entire United Kingdom.
+  Predictions have shown that this consumption will double every four years\cite{consumption-prediction}.
+
+  As processing-power demanding technologies like artificial intelligence and blockchain have
+  been appearing, the network of data centers that have sprung up in the past decade will spread.
+  Moreover, internet-connected devices is changing the entire landscape because IoT is
+  projected to exceed 20 billion devices by 2020. Given there are currently 10 billion devices,
+  doubling that will require huge increases to our data centers infrastructure, which will
+  massively grow our electricity consumption, and that is just adding fuel to the fire.
+
+  There has been some trials to remedy the situation such as using other alternatives to silicon in
+  data storage and counting on virtualization to reduce the use of physical machines, but all of that
+  still can not keep up against the extreme consumption demand.
+
+%******************************** Section 1.5 *********************************%
+\section{Suggested solution}
+  Although the existing trials are aiming to make data centers greener, in this project we are taking another
+  perspective. The idea is to push computation (or part of it) to the edge of the network instead of sending
+  it to the cloud (fog/edge computing principles) and use solar energy to power devices that execute this
+  computation. iExec plays a key role in this approach because the execution process will be handled by its
+  software, in other words we are creating an iExec's worker that is completely autonomous and energy positive.
+  The prototype of this system is a Raspberry Pi based device powered by a solar panel but the concept can be
+  applied to a wider range of use cases.
+
+%******************************** Section 1.6 *********************************%
+\section{Conclusion}
+  After talking about the project's context and background, we presented the host company and discussed the
+  problematic we are dealing with as well as the solution to resolve this issue, which is the subject of this
+  project.
+
+\clearpage
