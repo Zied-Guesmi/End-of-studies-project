@@ -12,4 +12,4 @@ To edit the Latex report locally, I used the open source VSCode text editor alon
 
 
 ## Presentation
-The pdf gives an overview of the presentation (no animations unfortunately). Ping me if you need access to the real presentation.
+The pdf gives an overview of the presentation (no animations unfortunately). Ping me if you need access to the presentation file.
